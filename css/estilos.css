@@ -1,0 +1,306 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Fondo oscuro */
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el header */
+header {
+    position: relative;
+    padding: 3em 1em;
+    background: url(../imagenes/fondoia.png) center/cover no-repeat;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+header h1 {
+    position: relative;
+    z-index: 2;
+}
+
+h2{
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 20px 0; /* Espaciado superior e inferior, ajusta como desees */
+}
+
+/* Estilos de navegación */
+nav {
+    background-color: #E64A19;
+    padding: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FF7043; /* Naranja más suave al pasar el mouse */
+}
+
+/* Estilos para el contenido de disfraces */
+#disfraces-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* Estilo de cada disfraz */
+.disfraz {
+    width: 30%; /* Asegura que haya 3 disfraces por fila */
+    background-color: #494949; /* Fondo oscuro para los comentarios */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    color: #f8f5f5; /* Color de texto */
+    margin-bottom: 20px; /* Espacio entre filas */
+}
+
+/* Efecto hover */
+.disfraz:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.disfraz h3 {
+    color: #FF5722;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.disfraz p {
+    color: #f8f5f5;
+    font-size: 1em;
+}
+
+/* Estilos para las imágenes de disfraces */
+.disfraz-img {
+    width: 100%; /* Las imágenes ocuparán el 100% del espacio disponible */
+    height: auto; /* Mantener la relación de aspecto */
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer; /* Para indicar que se puede hacer clic */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover en las imágenes */
+.disfraz-img:hover {
+    transform: scale(1.05); /* Pequeño efecto de zoom al pasar el mouse */
+}
+
+/* Estilos de formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+}
+
+form label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #f8f5f5;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="file"],
+form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #2c2c2c;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="file"]:focus,
+form textarea:focus {
+    background-color: #424242;
+}
+
+form button {
+    padding: 12px 20px;
+    background-color: #FF5722;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #E64A19;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #212121;
+    padding: 20px;
+    text-align: center;
+    color: #f8f5f5;
+    margin-top: 40px;
+    font-size: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Lightbox para imágenes */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Mensaje de éxito (usuario ingresó correctamente) */
+.message.success {
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: 1px solid #218838;
+}
+
+/* Mensaje de error (usuario en uso o error de inicio de sesión) */
+.message.error {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+    border: 1px solid #c82333;
+}
+/* Estilos generales para las imágenes */
+.disfraz-img {
+    width: 100%; /* Aseguramos que la imagen ocupe todo el ancho del contenedor */
+    height: 200px; /* Tamaño fijo para la altura de la imagen */
+    object-fit: cover; /* Recorta la imagen manteniendo la proporción */
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer; /* Para indicar que se puede hacer clic */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Recorta la parte inferior de la imagen */
+}
+
+/* Estilos para los contenedores de los disfraces */
+.disfraz {
+    width: 30%; /* 3 disfraces por fila */
+    background-color: #494949; /* Fondo oscuro para los comentarios */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    color: #f8f5f5; /* Color de texto */
+    margin: 10px; /* Separación entre los disfraces */
+}
+
+.disfraz:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Otros estilos permanecen igual */
+
+/* Estilos para el modal */
+.lightbox {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.message {
+    position:static;
+    top: 50%;
+    left: 50%;
+    background-color: #2a9445;
+    color: #080102;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+}
